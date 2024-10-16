@@ -70,19 +70,19 @@ const Main = () => {
             <div className="custom-options-wrapper">
                 <div className="custom-options-checkbox-wrapper">
                     <div className="custom-options-checkbox">
-                        <input /*className="custom-checkbox-input"*/ id="custom-checkbox-uppercase" checked="checked" type="checkbox" name="uppercase"></input>
+                        <input /*className="custom-checkbox-input"*/ id="custom-checkbox-uppercase" type="checkbox" name="uppercase"></input>
                         <label className="custom-checkbox-label" for="custom-checkbox-uppercase">Uppercase</label>
                     </div>
                     <div className="custom-options-checkbox">
-                        <input /*className="custom-checkbox-input"*/ id="custom-checkbox-lowercase" checked="checked" type="checkbox" name="uppercase"></input>
+                        <input /*className="custom-checkbox-input"*/ id="custom-checkbox-lowercase" type="checkbox" name="lowercase"></input>
                         <label className="custom-checkbox-label" for="custom-checkbox-lowercase">Lowercase</label>
                     </div>
                     <div className="custom-options-checkbox">
-                        <input /*className="custom-checkbox-input"*/ id="custom-checkbox-numbers" checked="checked" type="checkbox" name="uppercase"></input>
+                        <input /*className="custom-checkbox-input"*/ id="custom-checkbox-numbers" type="checkbox" name="numbers"></input>
                         <label className="custom-checkbox-label" for="custom-checkbox-numbers">Numbers</label>
                     </div>
                     <div className="custom-options-checkbox">
-                        <input /*className="custom-checkbox-input"*/ id="custom-checkbox-specialchar" checked="checked" type="checkbox" name="uppercase"></input>
+                        <input /*className="custom-checkbox-input"*/ id="custom-checkbox-specialchar" type="checkbox" name="specialchar"></input>
                         <label className="custom-checkbox-label" for="custom-checkbox-specialchar">Special characters</label>
                     </div>
                 </div>
