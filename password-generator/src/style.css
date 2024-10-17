@@ -1,51 +1,88 @@
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #222831;
+  /* color: #222831; */
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-position: center;
+  text-align: center;
+  background-size: cover;
+}
 body {
   font-family: "Arial", sans-serif;
-  background-color: #596e79;
+  /* background-color: #596e79; */
+  /* background-image: url("/public/password-wallpaper.jpg"); */
   display: flex;
   justify-content: center;
   height: 100vh;
   margin: 0;
 }
+.title-bar {
+  padding-top: 30px;
+}
+.title-bar h1 {
+  color: white;
+  max-width: 832px;
+  margin: auto;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1.3;
+  text-align: center;
+}
+.title-bar p {
+  color: #f0f0f0;
+  max-width: 832px;
+  margin: auto;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+  padding-top: 10px;
+}
+
 .container {
-  background-color: #596e79;
   display: flex;
-  flex-direction: column;
-  padding: 20px;
-  border-radius: 10px;
-  width: 1300px;
-  /* box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); */
-  justify-content: center;
   align-items: center;
+  /* width: 100%; */
+  /* height: 100%; */
+  margin: 20px;
+  /* position: fixed; */
 }
-h1 {
-  color: #dfd3c3;
-  text-align: center; /* Center the heading text */
+.pg-container-left,
+.pg-container-right {
+  flex: 1; /* Each container takes equal space */
+  height: 100%; /* Ensures both containers are the same height */
+  padding: 20px; /* Optional: padding for content */
+  box-sizing: border-box;
 }
-.pg_container {
-  background-color: #596e79;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
+.image-container {
+  flex: 0 0 auto; /* Do not grow or shrink, maintain its natural size */
+  width: auto; /* Allow image container to fit the image naturally */
+  height: 100%; /* Match height of other containers */
+}
+.image-container img {
+  width: 92%; /* Make the image fill its container */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Prevent bottom space from image */
   border-radius: 10px;
-  width: 700px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.9);
-  justify-content: center;
-  align-items: center;
 }
+
 .pg-container-1 {
-  background-color: #f0ece2;
+  background-color: #93e4c1;
   display: flex;
   border-radius: 10px;
-  width: 600px;
+  width: 90%;
   height: 60px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
   align-items: center;
+  padding: 0 30px 0 30px;
   /* justify-content: center; */
 }
-input {
+.pg-container-1 input {
   font-size: larger;
   font-weight: 500;
-  width: 90%;
+  width: 100%;
   height: 40px;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
@@ -54,209 +91,294 @@ input {
   border: none;
 }
 ::placeholder {
-    color: rgb(82, 56, 6) !important;
-    opacity: 0.5; /* Firefox */
-  }
-  input:focus {
-    /* outline: #336699 auto 1px; */
-    outline: none;
-    background-color: transparent;
-  }
+  color: rgb(82, 56, 6) !important;
+  opacity: 0.5; /* Firefox */
+}
+.pg-container-1 input:focus {
+  /* outline: #336699 auto 1px; */
+  outline: none;
+  background-color: transparent;
+}
 .buttonsWrapper {
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
 }
 .copy-container {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 .refresh-container {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 .copy-image {
-    background-image: url("/public/copy.png");
-    background-size: 25px;
+  background-image: url("/public/copy.png");
+  background-size: 25px;
 }
-.refresh-image{
-    background-image: url("/public/refresh.svg");
-    background-size: 25px;
+.refresh-image {
+  background-image: url("/public/refresh.svg");
+  background-size: 25px;
 }
 .copy-button,
-.refresh-button {  
+.refresh-button {
   background-repeat: no-repeat;
-  background-color: #f0ece2;
+  background-color: #93e4c1;
   height: 31px;
   width: 32px;
   border: none;
   cursor: pointer;
   font-size: 1.5em;
-  background-position: center;  
+  background-position: center;
   padding: 0px 0px 0px 20px;
   /* margin-left: 10px; */
 }
 .message {
-    visibility: hidden;  /* Initially hidden */
-    /* width: 60px; */
-    background-color: black;
-    color: white;
-    text-align: center;
-    border-radius: 5px;
-    padding: 5px 10px;
-    white-space: nowrap;
+  visibility: hidden; /* Initially hidden */
+  /* width: 60px; */
+  background-color: black;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 10px;
+  white-space: nowrap;
 
-    /* Positioning */
-    position: absolute;
-    bottom: 125%; /* Place the message above the button */
-    left: 50%;
-    transform: translateX(-50%); /* Center the tooltip */
+  /* Positioning */
+  position: absolute;
+  bottom: 125%; /* Place the message above the button */
+  left: 50%;
+  transform: translateX(-50%); /* Center the tooltip */
 
-    opacity: 0;
-    transition: opacity 0.3s;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
 .message::after {
-    content: '';
-    position: absolute;
-    top: 100%; /* At the bottom of the tooltip */
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: black transparent transparent transparent;
+  content: "";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
 }
 
-.copy-container:hover .message, .refresh-container:hover .message {
-    visibility: visible;
-    opacity: 1;  /* Show the message on hover */
+.copy-container:hover .message,
+.refresh-container:hover .message {
+  visibility: visible;
+  opacity: 1; /* Show the message on hover */
 }
 .pg-container-2 {
-  background-color: #f0ece2;
+  background-color: #93e4c1;
   border-radius: 10px;
-  width: 600px;
+  width: 90%;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin-top: 60px;
+  margin-top: 20px;
   padding: 0 30px 0 30px;
-  /* display: flex;
-  align-items: center; */
-  /* height: 60px; */
+  align-items: center;
+  padding-bottom: 20px;
 }
-.custom-title{
-    border-bottom: 2px solid #a7bcb9;
-    line-height: 2.7rem;
-    margin-bottom: 26px
+.custom-title {
+  border-bottom: 2px solid #a7bcb9;
+  line-height: 2.7rem;
+  margin-bottom: 26px;
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  /* font-style: normal; */
+  font-style: italic;
+  width: 90%;
 }
-h3{
-    font-family: "Source Sans 3",sans-serif;
-    font-size: 28px;
-    line-height: 32px;
-    font-weight: 500;
-    margin-bottom: 8px;
-    letter-spacing: -0.56px
+h3 {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 28px;
+  line-height: 32px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  letter-spacing: -0.56px;
 }
-  .custom-range-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    width: 70%;
-    /* margin-bottom: 40px */
-  }
-  .custom-range-label{
-    color: #000;
-    flex-basis: 100%;
-    font-family: "Source Sans 3",sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    margin-bottom: 8px;
-    letter-spacing: -0.16px;
-    margin-bottom: 14px;
-    display: block
-  }
-  .custom-range-inner {
-    display: flex;
-    width: 100%
+.custom-range-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the items horizontally */
+  width: 40%; /* Adjust the width as necessary */
+  gap: 10px; /* Add some space between the items, if needed */
 }
-.custom-range-number{
-    box-shadow: inset 0 1px 2px 0 rgba(0,0,0,.25);
-    height: 50px;
-    text-align: center;
-    width: 75px;
-    background-color: #fff;
-    border: 1px solid #c8c8c8;
-    border-radius: 5px;
-    max-width: 400px;
-    padding: 8px;
-    font-family: "Source Sans 3",sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    margin-bottom: 8px;
-    letter-spacing: -0.16px;
-    margin-right: 20px;
+.custom-range-label,
+.custom-checkbox-label {
+  color: #000;
+  /* flex-basis: 100%; */
+  font-family: "Kanit", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.16px;
+  display: block;
 }
-.custom-range-range-bar{
-    background-color: #f0f2f5;
-    border-radius: 5px;
-    height: 8px;
-    margin-top: 13px;
-    position: relative;
-    width: 100%
+.custom-range-number {
+  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  height: 50px;
+  text-align: center;
+  width: 75px;
+  background-color: #fff;
+  border: 1px solid #c8c8c8;
+  border-radius: 5px;
+  max-width: 400px;
+  padding: 8px;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 8px;
+  letter-spacing: -0.16px;
+  margin-right: 20px;
 }
-.custom-range-range-value{
-    pointer-events: none;
-    background-color: #596e79;
-    border-radius: 5px;
-    height: 8px;
-    max-width: 100% !important;
-    width: 0
+.custom-range {
+  display: flex;
+  width: 75%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: space-between;
 }
-.custom-range-range-slider{
-    background-color: #596e79;
-    border: 0;
-    border-radius: 16px;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.25);
-    height: 32px;
-    left: -16px;
-    position: absolute;
-    top: -13px;
-    transition: background-color .3s,box-shadow .3s;
-    width: 32px;
-    z-index: 1
+.range-min,
+.range-max {
+  font-size: 15px; /* Adjust size as needed */
+  color: #333; /* Adjust text color */
+  margin: 0 10px; /* Add some spacing */
 }
-.custom-options-wrapper{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%
+.slider {
+  /* width: 70%; */
+  appearance: none; /* removes browser-specific styling */
+  width: 100%; /* width of slider */
+  height: 8px; /* height of slider */
+  background: linear-gradient(
+    to right,
+    #1f6f78 var(--percentage, 50%),
+    #e3f6f5 var(--percentage, 50%)
+  );
+  outline: none; /* remove outline */
+  border-radius: 5px; /* round corners */
 }
-.custom-options-checkbox-wrapper{
-    max-width: 250px;
-    padding-left: 10px;
-    width: 40%
-}
-.custom-options-checkbox{
-    margin-bottom: 15px
-}
-/* .custom-checkbox-input{
 
-} */
-.custom-checkbox-label{
-    color: #000;
-    cursor: pointer;
-    display: inline-block;
-    font-family: "Source Sans 3",sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    margin-bottom: 8px;
-    letter-spacing: -0.16px;
-    line-height: 27px;
-    padding-left: 34px;
-    position: relative
+.slider::-webkit-slider-thumb {
+  appearance: none; /* removes browser-specific styling */
+  width: 28px; /* handle width */
+  height: 28px; /* handle height */
+  border-radius: 50%; /* make it circular */
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+  /* left: -16px; */
+  background: #1f6f78; /* white color */
+  cursor: pointer; /* cursor on hover */
 }
+
+/* Hover Effect on Thumb - WebKit */
+.slider::-webkit-slider-thumb:hover {
+  background: #1f6f78; /* Darker color on hover */
+  transform: scale(1.2); /* Slightly increase thumb size on hover */
+}
+.custom-options-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows checkboxes to wrap into rows */
+  gap: 10px; /* Spacing between checkboxes */
+}
+/* .custom-options-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 48%; Ensure two checkboxes fit in one row 
+} */
+.custom-options-checkbox input[type="checkbox"] {
+  /* Customizing the appearance */
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  accent-color: #1f6f78; /* This changes the checkmark color */
+  border: 1px solid #c8c8c8;
+  border-radius: 30px;
+  margin-right: 5px;
+}
+
+/* custom checkbx starts here */
+.checkbox-wrapper {
+  display: flex; /* Aligns items horizontally */
+  align-items: center;
+  /* justify-content: 60%; */
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding-left: 2px;
+  width: 48%;
+}
+.checkbox-wrapper input[type="checkbox"] {
+  visibility: hidden;
+  display: none;
+}
+
+.checkbox-wrapper .toggle {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transform: translate3d(0, 0, 0);
+  margin-right: 10px;
+}
+.checkbox-wrapper .toggle:before {
+  content: "";
+  position: relative;
+  top: 3px;
+  left: 3px;
+  width: 34px;
+  height: 14px;
+  display: block;
+  background: #9a9999;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+.checkbox-wrapper .toggle span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  display: block;
+  background: #e3f6f5;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(154, 153, 153, 0.5);
+  transition: all 0.2s ease;
+}
+.checkbox-wrapper .toggle span:before {
+  content: "";
+  position: absolute;
+  display: block;
+  margin: -18px;
+  width: 56px;
+  height: 56px;
+  background: #118a7e;
+  border-radius: 50%;
+  transform: scale(0);
+  opacity: 1;
+  pointer-events: none;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked + .toggle:before {
+  background: #3baea0;
+}
+.checkbox-wrapper input[type="checkbox"]:checked + .toggle span {
+  background: #1f6f78;
+  transform: translateX(20px);
+  transition: all 0.2s cubic-bezier(0.8, 0.4, 0.3, 1.25), background 0.15s ease;
+  box-shadow: 0 3px 8px rgba(79, 46, 220, 0.2);
+}
+.checkbox-wrapper input[type="checkbox"]:checked + .toggle span:before {
+  transform: scale(1);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+/* custom checkbx ends here */
